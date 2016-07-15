@@ -36,7 +36,15 @@
             <b>----- Here we are applying checkbox </b>
             <div ng-controller="checkboxCtrl">
                 <input type="checkbox" ng-model="values.controller">Controller <br>
-                <input type="checkbox" ng-model="values.scope">Scope
+
+                <input type="checkbox" ng-model="values.scope">Scope <br>
+                 <b>----- Here we are applying selectbox list </b>
+                <br>
+        <div ng-controller="selectboxCtrl">
+                <select ng-model="listOfValues" ng-options="x for x in list">
+                </select>
+             <h3>  Hi You selected {{listOfValues}} </h3>
+                </div>
             </div>
         </div>
     </div>
