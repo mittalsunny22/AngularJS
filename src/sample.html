@@ -12,8 +12,13 @@
 
 <body>
     <div ng-app="sunny" ng-controller="sunnyCtrl">
-        <h1> {{message}}</h1>
-        <h6>Designation :: {{designation}}</h6>
+        <b>--------We are adding multiple lines in a single variable------------</b>
+
+        <br \>
+        <br \>
+        <b>Message ::</b> <textarea cols="50" ng-model="message"></textarea><br>
+        <b>-----Here we are getting value from controller-------</b>
+        <h6><b>Designation :: </b> {{designation}}</h6>
         <b>------Here we are using ng-model as directive-----</b>
         <p>Enter your Name: <input type="text" ng-model="name"></p>
         <p>The value which is being type in textbox :: <b>{{name}}</b></p>
@@ -28,6 +33,11 @@
         <div ng-controller="sunnyNewCtrl">
             <b>------Here we are using multiple controller------</b>
             <h4>Age : {{age}}</h4>
+            <b>----- Here we are applying checkbox </b>
+            <div ng-controller="checkboxCtrl">
+                <input type="checkbox" ng-model="values.controller">Controller <br>
+                <input type="checkbox" ng-model="values.scope">Scope
+            </div>
         </div>
     </div>
 </body>
