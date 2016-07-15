@@ -24,26 +24,30 @@
         <p>The value which is being type in textbox :: <b>{{name}}</b></p>
         <b>Here we are calling the function and giving the values</b>
         <p>Hello {{fullName("Sunny","99")}} !</p>
+
         <b>-----Here we are using loop to print values----</b>
         <ul>
             <li ng-repeat="fastFood in records.values">
                 Fruits :: {{fastFood.name}}
             </li>
         </ul>
+
+        <b>------Here we are using multiple controller------</b>
         <div ng-controller="sunnyNewCtrl">
-            <b>------Here we are using multiple controller------</b>
             <h4>Age : {{age}}</h4>
+
             <b>----- Here we are applying checkbox </b>
             <div ng-controller="checkboxCtrl">
                 <input type="checkbox" ng-model="values.controller">Controller <br>
 
                 <input type="checkbox" ng-model="values.scope">Scope <br>
-                 <b>----- Here we are applying selectbox list </b>
+
+                <b>----- Here we are applying selectbox list </b>
                 <br>
-        <div ng-controller="selectboxCtrl">
-                <select ng-model="listOfValues" ng-options="x for x in list">
+                <div ng-controller="selectboxCtrl">
+                    <select ng-model="listOfValues" ng-options="x for x in list">
                 </select>
-             <h3>  Hi You selected {{listOfValues}} </h3>
+                    <h3>  Hi You selected {{listOfValues}} </h3>
                 </div>
             </div>
         </div>
