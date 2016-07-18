@@ -16,9 +16,10 @@
 
         <br \>
         <br \>
+        {{c}}
         <b>Message ::</b> <textarea cols="50" ng-model="message"></textarea><br>
         <b>-----Here we are getting value from controller-------</b>
-        <h6><b>Designation :: </b> {{designation}}</h6>
+        <h6><b>Designation :: </b> {{designation | DemoFilter}}</h6>
         <b>------Here we are using ng-model as directive-----</b>
         <p>Enter your Name: <input type="text" ng-model="name"></p>
         <p>The value which is being type in textbox :: <b>{{name}}</b></p>
@@ -28,7 +29,7 @@
         <b>-----Here we are using loop to print values----</b>
         <input type="text" ng-model="test">
         <ul>
-            <li ng-repeat="fastFood in records.values | filter:test | orderBy:'name'">
+            <li ng-repeat="fastFood in records.values | filter:test | orderBy:'name' ">
                 Fruits :: {{fastFood.name +"," + fastFood.type}}
             </li>
         </ul>
@@ -39,18 +40,20 @@
 
             <b>----- Here we are applying checkbox </b>
             <div ng-controller="checkboxCtrl">
-                <input type="checkbox" ng-model="values.controller">Controller <br>
+                <input type="checkbox" ng-model="values.controller ">Controller <br>
 
                 <input type="checkbox" ng-model="values.scope">Scope <br>
 
                 <b>----- Here we are applying selectbox list </b>
                 <br>
                 <div ng-controller="selectboxCtrl">
-                    <select ng-model="listOfValues" ng-options="x for x in list">
+                    <select ng-model="listOfValues" ng-options="x for x in list ">
                     </select>
-                    <h3>  Hi You selected {{listOfValues}} </h3>
-                    <div ng-init="a=2;b=4">
-                        Calculation while multiplying : {{a*b | currency }}
+                    <h3>  Hi You selected {{listOfValues }} </h3>
+                    <div>
+                   First Value:  <input type="number" ng-model="one">
+                    Second Value: <input type="number" ng-model="two">
+                        <br><b>Total :</b> {{ one * two }}
                     </div>
                     <div ng-init="person={firstName :'Sunny',lastName:'Mittal'}">
                         Full Name : {{person.firstName + " " + person.lastName | uppercase}} 
