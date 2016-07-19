@@ -9,6 +9,14 @@
     <script type="text/javascript" src="../lib/jquery-1.8.0.min.js"></script>
     <script type="text/javascript" src="../lib/bootstrap.js"></script>
     <script type="text/javascript" src="../lib/bootstrap.min.js"></script>
+    <style>
+        table,th,td {
+            border: 1px solid grey;
+            padding: 5px;
+        }
+
+
+    </style>
 </head>
 
 <body>
@@ -34,6 +42,27 @@
                 Fruits :: {{fastFood.name +"," + fastFood.type}}
             </li>
         </ul>
+        <div>
+
+            <table>
+            <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                </tr>
+                <tr ng-repeat="fastFood in records.values">
+                    <td> {{fastFood.name}}   </td>
+
+                    <td> {{fastFood.type}}  </td>
+
+                </tr>
+
+
+            </table>
+        </div>
+
+
+
+
 
         <b>------Here we are using multiple controller------</b>
         <div ng-controller="sunnyNewCtrl">
@@ -52,19 +81,19 @@
                     </select>
                     <h3>  Hi You selected {{listOfValues }} </h3>
                     <div ng-init="one=4;two=5">
-                     First Value:  <input type="number" ng-model="one">
-                     Second Value: <input type="number" ng-model="two">
-                     <br><b>Total :</b> {{ one * two }}
-                 </div>
-                 <div ng-init="person={firstName :'Sunny',lastName:'Mittal'}">
+                       First Value:  <input type="number" ng-model="one">
+                       Second Value: <input type="number" ng-model="two">
+                       <br><b>Total :</b> {{ one * two }}
+                   </div>
+                   <div ng-init="person={firstName :'Sunny',lastName:'Mittal'}">
                     Full Name : {{person.firstName + " " + person.lastName | uppercase}} 
                 </div>
                 <div ng-init="marks=[1,5,9]">
-                 Array Value : {{ marks[2]}}
-             </div>
-        </div>
-    </div>
-</div>
+                   Array Value : {{ marks[2]}}
+               </div>
+           </div>
+       </div>
+   </div>
 </div>
 </body>
 
