@@ -11,7 +11,7 @@
     <script type="text/javascript" src="../lib/bootstrap.min.js"></script>
     <style>
         table,th,td {
-            border: 1px solid grey;
+            border: 5px solid black;
             padding: 5px;
         }
 
@@ -46,13 +46,15 @@
 
             <table>
             <tr>
+                    <th>S.No.</th>
                     <th>Name</th>
                     <th>Type</th>
                 </tr>
-                <tr ng-repeat="fastFood in records.values">
-                    <td> {{fastFood.name}}   </td>
+                <tr ng-repeat="fastFood in records.values ">
+                <td>{{$index+1}}</td>
+                    <td> {{fastFood.name |uppercase }}   </td>
 
-                    <td> {{fastFood.type}}  </td>
+                    <td> {{fastFood.type | lowercase}}  </td>
 
                 </tr>
 
