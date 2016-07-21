@@ -79,9 +79,15 @@
                 <b>----- Here we are applying selectbox list </b>
                 <br>
                 <div ng-controller="selectboxCtrl">
-                    <select ng-model="listOfValues" ng-options="x for x in list ">
-                    </select>
+                    <select ng-model="listOfValues" ng-options="x for (x, y) in names">
+                    </select> <br>
                     <h3>  Hi You selected {{listOfValues }} </h3>
+                    <b>----------------Another way to Define select box--------- </b><br>
+                    <select>
+                        <option ng-repeat="x in list">{{x}}</option>
+
+                    </select>
+                   
                     <div ng-init="one=4;two=5">
                        First Value:  <input type="number" ng-model="one">
                        Second Value: <input type="number" ng-model="two">

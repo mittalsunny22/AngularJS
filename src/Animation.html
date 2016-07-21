@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<style>
+h2 {
+  transition: all linear 0.0s;
+  background-color: lightblue;
+  height: 100px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.ng-show {
+  height: 0;
+  width: 0;
+  background-color: transparent;
+  top:-200px;
+  left: 200px;
+}
+
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+
+<body ng-app="myApp">
+
+<h1>Are you Sunny?<input type="checkbox" ng-model="myCheck"></h1>
+
+<h2 ng-show="myCheck">Welcome Sunny!</h2>
+
+<script>
+var app = angular.module('myApp', ['ngAnimate']);
+</script>
+
+</body>
+</html>
+

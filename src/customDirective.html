@@ -1,25 +1,36 @@
 <html>
-
 <head>
-	<title>AngularJS First Application</title>
-
-	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-	<script type="text/javascript" src="../lib/angular.min.js"></script>
-	<script type="text/javascript" src="../lib/app.js"></script>
-	<script type="text/javascript" src="../lib/jquery-1.8.0.min.js"></script>
-	 <!-- <script type="text/javascript" src="../lib/bootstrap.js"></script> -->
+<title>Angular JS Custom Directives</title>
 </head>
 <body>
-
-	Sunny Code here
-
-	<div ng-app="sunny" ng-controller="sunnyCtrl"> 
-
-	<p ng-sunny></p>
-	</div>
-	<!-- 
-	<div ng-mittal="">
-	</div> -->
-
+<h2>AngularJS Sample Application</h2>
+<div ng-app="mainApp" ng-controller="StudentController">
+<student name="Sunny"></student><br/>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+<script>
+var mainApp = angular.module("mainApp", []);
+mainApp.directive('student', function() {
+var directive = {};
+directive.restrict = 'E';
+directive.template = "Student: <b>{{student.name}}</b> , Roll No: <b>{{student.rollno}}</b>";directive.scope = {
+student : "=name"
+}
+directive.compile = function(element, attributes) {
+element.css("border", "1px solid #cccccc");
+var linkFunction = function($scope, element, attributes) {
+element.html("Student: <b>"+$scope.student.name +"</b> , Roll No: <b>"+$scope.student.rollno+"</b><br/>");
+element.css("background-color", "#FF0000");
+}
+return linkFunction;
+}
+return directive;
+});
+mainApp.controller('StudentController', function($scope) {
+$scope.Sunny = {};
+$scope.Sunny.name = "Sunny";
+$scope.Sunny.rollno = 1;
+});
+</script>
 </body>
 </html>

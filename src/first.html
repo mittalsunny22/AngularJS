@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body ng-app="">
+
+<p>Change the value of the input field:</p>
+
+<div>
+
+<input style="background-color:{{myCol}}" ng-model="myCol" value="{{myCol}}">
+<input type="checkbox" ng-model="value" "> 
+Checked Value is {{value}}
+</div>
+
+
+<form ng-app="" name="myForm">
+    Email:
+    <input type="email" name="myAddress" ng-model="sunny">
+    <span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+
+
+{{sunny}} 
+</form>
+
+
+</body>
+</html>

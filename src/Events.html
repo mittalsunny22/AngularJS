@@ -17,11 +17,56 @@
 
 {{countNumber}}
 </div>
+
+<div>
+<h1 ng-mousemove="count = count + 1" ng-init="count=0">Mouse Over Me!</h1>
+
+<h2>{{ count }}</h2>
+
+</div>
+
 <div ng-controller="showHideEventCtrl">
 	
 <input type="button" value="button" ng-click="showHide()" />
 <div ng-show="isVisible">Angular</div>
 
 </div>
+<div>
+<h1 ng-mousemove="myFunc($event)">Mouse Over Me!</h1>
+</div>
+<div ng-controller="myCtrl">
+
+<button ng-click="myFunc()">Click Me!</button>
+
+<div ng-show="showMe">
+    <h1>Menu:</h1>
+    <div>Pizza</div>
+    <div>Pasta</div>
+    <div>Pesce</div>
+</div>
+
+</div>
+<p>Click the button to show/hide the menu.</p>
+<form>
+  Pick a topic:
+  <input type="radio" ng-model="myVar" value="dogs">Dogs
+  <input type="radio" ng-model="myVar" value="tuts">Tutorials
+  <input type="radio" ng-model="myVar" value="cars">Cars
+</form>
+<div ng-switch="myVar">
+  <div ng-switch-when="dogs">
+     <h1>Dogs</h1>
+     <p>Welcome to a world of dogs.</p>
+  </div>
+  <div ng-switch-when="tuts">
+     <h1>Tutorials</h1>
+     <p>Learn from examples.</p>
+  </div>
+  <div ng-switch-when="cars">
+     <h1>Cars</h1>
+     <p>Read about cars.</p>
+  </div>
+</div>
+
 </body>
 </html>

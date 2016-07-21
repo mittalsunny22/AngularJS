@@ -1,0 +1,21 @@
+[
+{
+"Name" : "Sunny Mittal",
+"RollNo" : 555,
+"Percentage" : "80%"
+},
+{
+"Name" : "Manav Chadda",
+"RollNo" : 201,
+"Percentage" : "60%"},
+{
+"Name" : "Vikram Bhardwaj",
+"RollNo" : 191,
+"Percentage" : "55%"
+},
+{
+"Name" : "Amnol Chhabra",
+"RollNo" : 420,
+"Percentage" : "20%"
+}
+]

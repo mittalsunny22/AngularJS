@@ -10,18 +10,18 @@
 	<script type="text/javascript" src="../lib/bootstrap.min.js"></script>
 </head>
 
-<body ng-app="formValidation">
-	<form name="myForm" novalidate>
+<body>
+<div ng-include="subFile.html"></div>
+	<form name="myForm" ng-app="formValidation" novalidate>
 		<p>Topic Name: <br> 
 			<input type="text" name="user" ng-model="user" required>
 			<span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
 				<span ng-show="myForm.user.$error.required">Username is required.</span>	
 			</span>
 		</p>
-
 		<p>
 			<input type="submit" ng-disabled="myForm.user.$dirty && myForm.user.$invalid">
 		</p>
-	</form>
+	</form>`
 </body>
 </html>

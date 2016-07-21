@@ -10,7 +10,8 @@
     <script type="text/javascript" src="../lib/bootstrap.min.js"></script>
 </head>
 
-<body ng-app="formValidation" ng-controller="validationCtrl">
+<body ng-app="formValidation"> 
+<div ng-controller="validationCtrl">
 <i>Please Enter Some Details Before Accessing to Full Control </i>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
 <form ng-submit="Display()">
@@ -21,5 +22,17 @@ Please enter the topics, you would like to subscirbe
 <li> {{topicname}}</li>
 </ul>
 </form>
+</div>
+
+<div ng-controller="valueComponentCtrl">
+<h3>
+Value from JS object : {{ID}}
+</h3>
+</div>
+
+<div ng-controller="serviceCtrl">
+	{{result}}
+
+</div>
 </body>
 </html>

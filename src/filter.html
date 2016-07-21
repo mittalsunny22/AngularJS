@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title>Angular JS Filters</title>
+</head>
+<body>
+	<h2>AngularJS Sample Application</h2>
+	<div ng-app="" ng-controller="studentController">
+		<table border="0">
+			<tr><td>Enter first name:</td><td><input type="text" ng-model="student.firstName"></td></tr>
+			<tr><td>Enter last name: </td><td><input type="text" ng-model="student.lastName"></td></tr>
+			<tr><td>Enter fees: </td><td><input type="text" ng-model="student.fees"></td></tr>
+			<tr><td>Enter subject: </td><td><input type="text" ng-model="subjectName"></td></tr>
+		</table>
+		<br/>
+		<table border="0">
+			<tr><td>Name in Upper Case: </td><td>{{student.fullName() | uppercase}}</td></tr>
+			<tr><td>Name in Lower Case: </td><td>{{student.fullName() | lowercase}}</td></tr>
+			<tr><td>fees: </td><td>{{student.fees | currency}}</td></tr>
+			<tr><td>Subject:</td><td>
+				<ul>
+					<li ng-repeat="subject in student.subjects | filter: subjectName |orderBy:'marks'">
+						{{ subject.name + ', marks:' + subject.marks }}
+					</li>
+				</ul>
+			</td></tr>
+		</table></div>
+		<script>
+			function studentController($scope) {
+				$scope.student = {
+					firstName: "Sunny",
+					lastName: "Mittal",
+					fees:500,
+					subjects:[
+					{name:'Physics',marks:70},
+					{name:'Chemistry',marks:80},
+					{name:'Math',marks:65}
+					],
+					fullName: function() {
+						var studentObject;
+						studentObject = $scope.student;
+						return studentObject.firstName + " " + studentObject.lastName;
+					}
+				};
+			}
+		</script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	</body>
+	</html>
